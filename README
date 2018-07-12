@@ -1,0 +1,29 @@
+FILT_TO_VTK
+
+The script vtkdrawer.py converts a filtration input to vtk format.
+
+USAGE
+-----
+
+Run with
+>> python vtkdrawer.py <points> <simplices with birth times>
+
+
+INPUT FORMAT
+------------
+1. points
+
+  First line consists of a header with data:
+	DIMENSION NUMBER_OF_POINTS
+
+	Followed by lines, one line for each point, each with coordinate data:
+	X_1, X_2, ..., X_DIMENSION
+
+2. simplices
+
+  One line for each simplex, with data:
+	DIM, V_0, V_1, ..., V_DIM, BIRTH_TIME
+
+	where V_0, V_1, ..., V_DIM are the indices of the vertices of the simplex.
+	The indices are given by the order of appearance in the points file,
+	with the first point being given index 0.
